@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Alyana Baez | Computer Science Major</title>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -13,70 +16,189 @@
 
     <style>
       body {
-        background-color: #ffe6f2;
-        color: #444;
+        background: linear-gradient(180deg, #ffeaf4, #fff0f7, #ffe6f2);
+        color: #555;
         font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        position: relative;
       }
 
+      /* Floating hearts & stars background */
+      .floating {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .floating span {
+        position: absolute;
+        display: block;
+        color: rgba(255, 182, 193, 0.6);
+        font-size: 1.2rem;
+        animation: float 10s linear infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-10vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* Navbar */
       .navbar {
-        background-color: #ffb6c1 !important;
+        background: linear-gradient(90deg, #ffb6c1, #ffcce0);
+        border-bottom: 2px solid #ffd9ec;
+        box-shadow: 0px 4px 12px rgba(255, 182, 193, 0.3);
       }
 
-      .navbar-brand, .nav-link {
+      .navbar-brand {
+        font-family: "Sacramento", cursive;
+        font-size: 2.3rem;
+        color: white !important;
+        text-shadow: 0px 0px 8px #ffd9ec;
+      }
+
+      .nav-link {
         color: white !important;
         font-weight: 500;
+        transition: all 0.3s ease;
       }
 
-      .navbar-brand:hover, .nav-link:hover {
+      .nav-link:hover {
         color: #fff0f5 !important;
+        text-shadow: 0px 0px 6px #ffffff;
       }
 
       h1, h2, h3 {
         color: #e75480;
       }
 
+      h1 {
+        font-family: "Sacramento", cursive;
+        font-size: 3.2rem;
+        text-shadow: 0px 2px 10px #ffd6e8;
+      }
+
       .btn-primary {
         background-color: #ffb6c1;
         border: none;
+        border-radius: 25px;
+        padding: 10px 25px;
+        transition: all 0.3s ease;
       }
 
       .btn-primary:hover {
         background-color: #ff9ab3;
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(255, 155, 178, 0.5);
       }
 
       .card {
         border-radius: 20px;
-        border: 2px solid #ffcce0;
-        box-shadow: 0px 4px 8px rgba(255, 192, 203, 0.3);
+        border: none;
+        background: #fff;
+        box-shadow: 0px 4px 12px rgba(255, 192, 203, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 6px 14px rgba(255, 182, 193, 0.4);
       }
 
       footer {
         text-align: center;
-        margin-top: 50px;
-        padding: 20px;
-        background-color: #ffb6c1;
+        margin-top: 60px;
+        padding: 25px;
+        background: linear-gradient(90deg, #ffb6c1, #ff9ab3);
         color: white;
-        border-radius: 10px;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -4px 8px rgba(255, 182, 193, 0.3);
       }
 
       img.profile {
-        border-radius: 20px;
-        border: 4px solid #ffb6c1;
+        border-radius: 50%;
+        border: 5px solid #ffcce0;
+        box-shadow: 0px 6px 15px rgba(255, 192, 203, 0.5);
+        transition: transform 0.3s ease;
+      }
+
+      img.profile:hover {
+        transform: scale(1.05) rotate(-2deg);
+      }
+
+      hr {
+        border-top: 2px dashed #ffcce0;
+        width: 70%;
+      }
+
+      a {
+        color: #e75480;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      a:hover {
+        color: #ff80a3;
+        text-shadow: 0px 0px 8px rgba(255, 182, 193, 0.6);
+      }
+
+      .fade-in {
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Glow animation for titles */
+      .glow {
+        animation: glow 2.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from { text-shadow: 0 0 10px #ffcce0, 0 0 20px #ffd6e8; }
+        to { text-shadow: 0 0 20px #ffb6c1, 0 0 40px #ffe6f2; }
       }
     </style>
   </head>
 
   <body>
+    <!-- Floating background decorations -->
+    <div class="floating">
+      <span style="left:10%; animation-delay:0s;">💖</span>
+      <span style="left:30%; animation-delay:2s;">✨</span>
+      <span style="left:50%; animation-delay:4s;">🌸</span>
+      <span style="left:70%; animation-delay:1s;">💫</span>
+      <span style="left:90%; animation-delay:3s;">🌷</span>
+      <span style="left:20%; animation-delay:5s;">🩷</span>
+      <span style="left:80%; animation-delay:6s;">⭐</span>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
-      <a class="navbar-brand" href="#">Alyana Baez</a>
+      <a class="navbar-brand" href="#">Alyana 🌸</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto text-right">
-          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
@@ -84,37 +206,37 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container mt-5">
+    <div class="container mt-5 fade-in" id="about">
       <div class="row align-items-center">
         <div class="col-md-8">
-          <h1>Hi, I’m Alyana Baez ❤️</h1>
-          <h3>Computer Science Major | Graphic Design Background</h3>
+          <h1 class="glow">Hi, I’m Alyana Baez 💕</h1>
+          <h3>Computer Science Major | Creative Technologist</h3>
           <p>
             I’m 18 years old and currently studying <b>Computer Science</b>.
             I was born on <b>March 11th, 2007</b>.  
-            I have a strong creative background in <b>graphic design</b> and love combining tech with art to build beautiful and functional things.
+            I have a strong background in <b>Graphic Design</b> and love blending art and technology to create cute, meaningful projects 🌷
           </p>
           <p>
-            I’m passionate about computers, design, and technology , and I hope to become a <b>software engineer</b> in the future!
+            I’m passionate about <b>coding, design, and creativity</b> — my dream is to become a <b>Software Engineer</b> who makes tech look and feel beautiful ✨
           </p>
         </div>
         <div class="col-md-4 text-center">
-          <img src="\img\Meee!!.jpg"" alt="Alyana Baez" class="profile" width="300" height="300">
+          <img src="img/Meee!!.jpg" alt="Alyana Baez" class="profile" width="280" height="280">
         </div>
       </div>
 
       <hr class="my-5">
 
       <!-- Projects Section -->
-      <section id="projects">
-        <h2 class="text-center mb-4">🌸 My Projects 🌸</h2>
+      <section id="projects" class="fade-in">
+        <h2 class="text-center mb-4 glow">🌸 My Projects 🌸</h2>
         <div class="row">
           <div class="col-md-4">
             <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title text-center">Personal Portfolio Website</h5>
+              <div class="card-body text-center">
+                <h5 class="card-title">💻 Personal Portfolio</h5>
                 <p class="card-text">
-                  A cute pink-themed personal website (this one!) showcasing my work, interests, and goals in tech and design.
+                  A soft pink-themed website (this one!) that shares my work, passions, and journey in computer science and design.
                 </p>
               </div>
             </div>
@@ -122,10 +244,10 @@
 
           <div class="col-md-4">
             <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title text-center">Graphic Design Collection</h5>
+              <div class="card-body text-center">
+                <h5 class="card-title">🎨 Graphic Design Collection</h5>
                 <p class="card-text">
-                  A showcase of my creative projects from Whittier Tech’s Graphic Design program using Adobe Photoshop and Illustrator.
+                  A gallery of creative projects from my time at Whittier Tech’s Graphic Design program using Photoshop and Illustrator.
                 </p>
               </div>
             </div>
@@ -133,10 +255,10 @@
 
           <div class="col-md-4">
             <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title text-center">Future Engineering Projects</h5>
+              <div class="card-body text-center">
+                <h5 class="card-title">💡 Future Engineering Projects</h5>
                 <p class="card-text">
-                  I plan to create projects that combine programming and design to tell meaningful stories.
+                  I plan to design and code projects that combine logic and creativity and make people smile 🌈
                 </p>
               </div>
             </div>
@@ -147,9 +269,9 @@
       <hr class="my-5">
 
       <!-- Contact Section -->
-      <section id="contact" class="text-center">
-        <h2>💌 Contact Me</h2>
-        <p>If you’d like to get in touch or see my work, feel free to reach out!</p>
+      <section id="contact" class="text-center fade-in">
+        <h2 class="glow">💌 Contact Me</h2>
+        <p>Let’s connect! I’d love to share ideas, collaborate, or just chat about tech & design ☁️</p>
         <p>
           <b>Email:</b> <a href="mailto:alyanabaez@example.com">alyanabaez@example.com</a><br>
           <b>GitHub:</b> <a href="https://github.com/">github.com/alyana</a><br>
@@ -159,7 +281,7 @@
     </div>
 
     <footer>
-      <p>© 2025 Alyana Baez | Made with 💖 and HTML</p>
+      <p>© 2025 Alyana Baez | Made with 💕, creativity, and coffee ☕</p>
     </footer>
 
     <!-- Scripts -->
